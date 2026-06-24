@@ -1,2 +1,9 @@
+packges:
+  - 'app/*'
+
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - nestjs-pino
+  - unrs-resolver
 allowBuilds:
   unrs-resolver: true
