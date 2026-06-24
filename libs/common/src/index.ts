@@ -8,3 +8,4 @@
 /// when we want to use somethign from the common library we need to xport it from this file
 
 export * from './database';
+export * from './logger';

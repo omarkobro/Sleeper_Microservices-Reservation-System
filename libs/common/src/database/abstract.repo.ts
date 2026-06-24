@@ -57,6 +57,8 @@ export abstract class AbstaractRepository<TDocument extends AbstractDocument> {
         new: true,
       },
     );
+
+    return documnet;
   }
 
   async findOneAndDelete(filterQuery: QueryFilter<TDocument>) {
