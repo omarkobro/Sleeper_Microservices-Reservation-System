@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [UsersModule],
+  imports: [UsersModule], //why when we generated the user module it got imported here automatically ?
   controllers: [AuthController],
   providers: [AuthService],
 })
