@@ -2,6 +2,7 @@ packages:
   - 'apps/*'
 
 allowBuilds:
+  bcrypt: false
   unrs-resolver: true
 
 onlyBuiltDependencies:

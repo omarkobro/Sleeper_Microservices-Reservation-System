@@ -1,12 +1,21 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import type { Response } from 'express';
 import { AuthService } from './auth.service';
+import { CurrentUser } from './decorators/current-user.decorator';
+import { LocalAuthGuard } from './guards/local-auth.guard';
+import { UserDocument } from './users/models/user.schema';
 
-@Controller()
+@Controller("/auth")
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
+  
+  @UseGuards(LocalAuthGuard)
+  @Post("login")
 
-  @Get()
-  getHello(): string {
-    return this.authService.getHello();
+  // what does passthrough flag do here. 
+  async login(@CurrentUser() user :UserDocument, @Res({passthrough:true}) response:Response){
+    await this.authService.login(user, response)
+    response.send(user)
   }
+
 }

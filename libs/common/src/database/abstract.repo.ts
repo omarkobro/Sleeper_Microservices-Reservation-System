@@ -3,7 +3,7 @@
 import { Logger, NotFoundException } from '@nestjs/common';
 import { Model, QueryFilter, Types, UpdateQuery } from 'mongoose';
 import { AbstractDocument } from './abstract.schema';
-
+// import { CreateIndexesOptions } from 'mongodb';
 export abstract class AbstaractRepository<TDocument extends AbstractDocument> {
   protected abstract readonly logger: Logger;
 
@@ -68,4 +68,8 @@ export abstract class AbstaractRepository<TDocument extends AbstractDocument> {
 
     return documnet;
   }
+
+  //   async createIndex(options: CreateIndexesOptions) {
+  //   return this.model.createIndexes(options as any);
+  // }
 }
