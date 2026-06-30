@@ -8,7 +8,7 @@ import { UserDocument } from './users/models/user.schema';
 export class AuthService {
 
   constructor(    private readonly configService: ConfigService,
-    private readonly jwtService: JwtService,){
+    private readonly jwtService: JwtService){
 
   }
 

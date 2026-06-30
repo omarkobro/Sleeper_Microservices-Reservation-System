@@ -1,0 +1,4 @@
+1: what is client proxy ?
+2: what is injection token ?
+3: WHAT is an observable 
+4: what about the @app/commn path ?
